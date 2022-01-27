@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1d">
+        <title>ZYTK Code Editor</title>
+        <meta name="description" content="Online JavaScript Compiler">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" type="image/x-icon" href="./favicon.png">
+    </head>
+
+    <body class="body">
+        <div class="editor-menu">
+            <button class="btn btn-dark-light">Dark Mode</button>
+            <button class="btn btn-run">Run</button>
+            <div class="live">
+                <label for="live">Live-</label>
+                <input type="checkbox" id="live">
+            </div>
+            <p id="ver">v0.7</p>
+        </div>
+
+        <div class="container">
+            <div class="left">
+                <div class="tocl tocl-1">
+                    <p class="toclp" onclick="dhtml()">HTML</p>
+                </div> 
+                <textarea class="editor-html"></textarea>
+                <div class="tocl tocl-2">
+                    <p class="toclp" onclick="dcss()">CSS</p>
+                </div>
+                <textarea class="editor-css"></textarea>
+                <div class="tocl tocl-3">
+                    <p class="toclp" onclick="djs()">JS</p>
+                </div>
+                <textarea class="editor-js"></textarea>
+            </div>
+            <div class="right">
+                <iframe frameborder="0" class="iframe"></iframe>
+            </div>
+        </div>
+        
+        <script src="./script.js"></script>
+    </body>
+
+</html>
