@@ -7,6 +7,7 @@ tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
 run = document.querySelector(".btn-run"),
+ontb = document.querySelector(".btn-ont"),
 iframe = document.querySelector(".iframe"),
 darkLightMode = document.querySelector(".btn-dark-light"),
 menu = document.querySelector(".editor-menu"),
@@ -80,8 +81,10 @@ darkLightMode.addEventListener("click", () => {
         body.style.backgroundColor = "#363836";
         darkLightMode.style.backgroundColor = "darkslategray";
         live.style.backgroundColor = "darkslategray";
+        ontb.style.backgroundColor = "darkslategray";
         run.style.backgroundColor = "darkslategray";
         darkMode.style.color = "#eee";
+        ontb.style.color = "#eee";
         lightMode.style.color = "#eee";
         run.style.color = "#eee";
         live.style.color = "#eee";
@@ -104,9 +107,11 @@ darkLightMode.addEventListener("click", () => {
         menu.style.backgroundColor = "";
         darkLightMode.style.backgroundColor = "#31ad26";
         live.style.backgroundColor = "#31ad26";
+        ontb.style.backgroundColor = "#31ad26";
         run.style.backgroundColor = "#31ad26";
         darkMode.style.color = "#fff";
         lightMode.style.color = "#fff"
+        ontb.style.color = "#fff";
         run.style.color = "#fff";
         live.style.color = "";
     }
@@ -120,6 +125,15 @@ livebtn.addEventListener("click", () => {
     } else {
         removeEventListener("keyup", runcode);
     }
+})
+
+ontb.addEventListener('click', () => {
+    let html = editorhtml.value;
+    let css = "<style>"+editorcss.value+"</style";
+    let js = editorjs.value;
+    var myWindow = window.open();
+    myWindow.document.body.innerHTML=html+css;
+    myWindow.window.eval(js);
 })
 
 function runcode() {
