@@ -16,6 +16,7 @@ livebtn = document.querySelector("#live"),
 body = document.querySelector(".body");
 
 let ldm = 0;
+let w = 0;
 
 // Run Btn Event Listener
 run.addEventListener("click", runcode)
@@ -131,7 +132,7 @@ ontb.addEventListener('click', () => {
     let html = editorhtml.value;
     let css = "<style>"+editorcss.value+"</style";
     let js = editorjs.value;
-    var myWindow = window.open();
+    var myWindow = window.open("", "View Code");
     myWindow.document.body.innerHTML=html+css;
     myWindow.window.eval(js);
 })
