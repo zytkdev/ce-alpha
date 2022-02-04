@@ -1,0 +1,38 @@
+ZYTK Code Editor Devlog
+
+Update v0.9.1 02/04/2022:
+   - Updated Checkmark style
+   - Fixed File Download
+   - Added Devlog
+
+Update v0.9 02/04/2022:
+   - Fixed Open In New Tab Bug
+   - Updated colors
+
+Update v0.8 02/01/2022:
+   - Added Open in New Tab Function
+   - Updated Buttons
+   - Fixed Dark Mode
+
+Update v0.6 12/14/2021:
+   - Added favicon
+   - Added feature where you can download your code
+
+Update v0.5 12/13/2021: 
+   - Changed light mode and dark mode buttons into one button
+   - Rounded buttons
+   - Rounded corners
+
+Update v0.4 12/10/2021: 
+   - Added CSS & Javascript functionality
+   - Updated live button
+
+Update v0.3 12/03/2021:
+   - Updated dark mode
+
+Update v0.2 12/01/2021:
+   - Updated fonts
+   - Added version in bar
+
+Release v0.1 12/01/2021:
+   - Released CE-Beta
