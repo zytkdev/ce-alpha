@@ -134,7 +134,8 @@ body {
 }
 
 .tocl {
-    background-color: lightgray;
+    background-color: #31ad26;
+    color: #eee;
     border-radius: 8px;
     border-width: 0;
     cursor: pointer;
