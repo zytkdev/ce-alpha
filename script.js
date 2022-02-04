@@ -16,6 +16,7 @@ livebtn = document.querySelector("#live"),
 body = document.querySelector(".body");
 
 let ldm = 0;
+let w = 0;
 
 // Run Btn Event Listener
 run.addEventListener("click", runcode)
@@ -97,12 +98,12 @@ darkLightMode.addEventListener("click", () => {
         editorcss.style.color = "";    
         editorjs.style.backgroundColor = "";
         editorjs.style.color = "";
-        tocl1.style.backgroundColor = "lightgray";
-        tocl1.style.color = "";
-        tocl2.style.backgroundColor = "lightgray";
-        tocl2.style.color = "";
-        tocl3.style.backgroundColor = "lightgray";
-        tocl3.style.color = "";
+        tocl1.style.backgroundColor = "#31ad26";
+        tocl1.style.color = "#eee";
+        tocl2.style.backgroundColor = "#31ad26";
+        tocl2.style.color = "#eee";
+        tocl3.style.backgroundColor = "#31ad26";
+        tocl3.style.color = "#eee";
         body.style.backgroundColor = "";
         menu.style.backgroundColor = "";
         darkLightMode.style.backgroundColor = "#31ad26";
@@ -131,7 +132,7 @@ ontb.addEventListener('click', () => {
     let html = editorhtml.value;
     let css = "<style>"+editorcss.value+"</style";
     let js = editorjs.value;
-    var myWindow = window.open();
+    var myWindow = window.open("", "View Code");
     myWindow.document.body.innerHTML=html+css;
     myWindow.window.eval(js);
 })
