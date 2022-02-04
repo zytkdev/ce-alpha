@@ -13,6 +13,7 @@ darkLightMode = document.querySelector(".btn-dark-light"),
 menu = document.querySelector(".editor-menu"),
 live = document.querySelector(".live"),
 livebtn = document.querySelector("#live"),
+devlog = document.querySelector(".btn-dev"),
 body = document.querySelector(".body");
 
 let ldm = 0;
@@ -135,6 +136,10 @@ ontb.addEventListener('click', () => {
     var myWindow = window.open("", "View Code");
     myWindow.document.body.innerHTML=html+css;
     myWindow.window.eval(js);
+})
+
+devlog.addEventListener('click', () => {
+    window.open("./devlog", "Devlog");
 })
 
 function runcode() {
