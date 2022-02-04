@@ -1,3 +1,5 @@
+/* ZYTK Code Editor Main Script */
+
 const left = document.querySelector(".left"),
 right = document.querySelector(".right"),
 editorhtml = document.querySelector(".editor-html"),
