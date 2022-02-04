@@ -139,7 +139,7 @@ ontb.addEventListener('click', () => {
 })
 
 devlog.addEventListener('click', () => {
-    window.open("./devlog.txt", "Devlog");
+    window.open("./devlog.html", "Devlog");
 })
 
 function runcode() {
