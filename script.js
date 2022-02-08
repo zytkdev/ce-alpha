@@ -1,5 +1,3 @@
-/* ZYTK Code Editor Main Script */
-
 const left = document.querySelector(".left"),
 right = document.querySelector(".right"),
 editorhtml = document.querySelector(".editor-html"),
@@ -8,13 +6,18 @@ editorjs = document.querySelector(".editor-js"),
 tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
+tocl4 = document.querySelector(".tocl-4"),
+pre = document.querySelector("#log"),
 run = document.querySelector(".btn-run"),
 ontb = document.querySelector(".btn-ont"),
 iframe = document.querySelector(".iframe"),
+con = document.querySelector(".test"),
 darkLightMode = document.querySelector(".btn-dark-light"),
 menu = document.querySelector(".editor-menu"),
 live = document.querySelector(".live"),
 livebtn = document.querySelector("#live"),
+conbtn = document.querySelector("#test"),
+con2 = document.querySelector(".console"),
 devlog = document.querySelector(".btn-dev"),
 body = document.querySelector(".body");
 
@@ -78,6 +81,11 @@ darkLightMode.addEventListener("click", () => {
         tocl1.style.backgroundColor = "darkslategray";
         devlog.style.backgroundColor = "darkslategray";
         tocl1.style.color = "#eee";
+        tocl4.style.backgroundColor = "darkslategray";
+        con.style.backgroundColor = "darkslategray";
+        con.style.color = "#eee";
+        tocl4.style.color = "#eee";
+        pre.style.color = "#eee";
         tocl2.style.backgroundColor = "darkslategray";
         tocl2.style.color = "#eee";    
         tocl3.style.backgroundColor = "darkslategray";
@@ -103,7 +111,12 @@ darkLightMode.addEventListener("click", () => {
         editorcss.style.color = "";    
         editorjs.style.backgroundColor = "";
         editorjs.style.color = "";
+        pre.style.color = "";
         tocl1.style.backgroundColor = "#31ad26";
+        tocl4.style.backgroundColor = "#31ad26"
+        con.style.backgroundColor = "#31ad26";
+        con.style.color = "#eee";
+        tocl4.style.color = "#eee";
         devlog.style.backgroundColor = "#31ad26";
         tocl1.style.color = "#eee";
         tocl2.style.backgroundColor = "#31ad26";
@@ -135,6 +148,17 @@ livebtn.addEventListener("click", () => {
     }
 })
 
+
+conbtn.addEventListener("click", () => {
+    if (conbtn.checked) {
+        con2.style.display = "block";
+        iframe.style.height = "75%";
+    } else {
+        con2.style.display = "none";
+        iframe.style.height = "100%";
+    }
+})
+
 ontb.addEventListener('click', () => {
     let html = editorhtml.value;
     let css = "<style>"+editorcss.value+"</style";
@@ -154,4 +178,7 @@ function runcode() {
     let js = editorjs.value;
     iframe.contentDocument.body.innerHTML=html+css;
     iframe.contentWindow.eval(js);
-}
+    if (conbtn.checked) {
+        window.eval(js);
+    }
+} 
