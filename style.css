@@ -165,7 +165,7 @@ body {
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 1px;
-    line-height: 1.8rem;
+    height: 3%;
     width: 100%;
     list-style: none;
     text-align: center;
@@ -270,11 +270,11 @@ textarea {
     transform: rotate(45deg);
   }
 
-  #log-container { overflow: auto; height: 15%; }
+  #log-container { overflow: auto; height: 21%; }
 
-  .log-warn { color: orange }
-  .log-error { color: red }
-  .log-info { color: skyblue }
-  .log-log { font-size: 1rem;}
+  .log-warn { color: orange; font-size: 1rem; margin-left: 4px;}
+  .log-error { color: red; font-size: 1rem; margin-left: 4px;}
+  .log-info { color: skyblue; font-size: 1rem; margin-left: 4px;}
+  .log-log { font-size: 1rem; margin-left: 4px;}
 
   .log-warn, .log-error { font-weight: bold;}
