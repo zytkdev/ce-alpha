@@ -1,6 +1,4 @@
-
-    
-    rewireLoggingToElement(
+rewireLoggingToElement(
     () => document.getElementById("log"),
     () => document.getElementById("log-container"), true);
 
