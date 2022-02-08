@@ -15,6 +15,12 @@
             <button class="btn btn-run">Run</button>
             <button class="btn btn-ont">Open In A New Tab</button>
             <button class="btn btn-dev">Devlog</button>
+            <div class="test">
+                <label class="check">Console (In Testing)
+                    <input type="checkbox" id="test">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
             <div class="live">
                 <label class="check">Live Mode
                     <input type="checkbox" id="live">
@@ -41,10 +47,19 @@
             </div>
             <div class="right">
                 <iframe frameborder="0" class="iframe" id="iframe"></iframe>
+                <div style="display: none;" class="console">
+                    <div class="tocl tocl-4">
+                        <p class="toclp">Console</p>
+                    </div>
+                    <div id="log-container">
+                        <pre id="log"></pre>
+                    </div>
+                </div>
             </div>
         </div>
         
         <script src="./script.js"></script>
+        <script src="./console.js"></script>
     </body>
 
 </html>
