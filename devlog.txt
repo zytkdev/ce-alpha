@@ -1,5 +1,9 @@
 ZYTK Code Editor Devlog
 
+Update v0.9.3 02/08/2022:
+   - Fixed Console
+   - Fixed Live Mode
+
 Update v0.9.2 02/08/2022:
    - Added Console (In Devlopment)
 
