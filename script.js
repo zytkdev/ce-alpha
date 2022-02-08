@@ -17,7 +17,7 @@ menu = document.querySelector(".editor-menu"),
 live = document.querySelector(".live"),
 livebtn = document.querySelector("#live"),
 conbtn = document.querySelector("#test"),
-con2 = document.querySelector(".console"),
+con2 = document.querySelector("#log-container"),
 devlog = document.querySelector(".btn-dev"),
 body = document.querySelector(".body");
 
@@ -152,9 +152,11 @@ livebtn.addEventListener("click", () => {
 conbtn.addEventListener("click", () => {
     if (conbtn.checked) {
         con2.style.display = "block";
+        tocl4.style.display = "block"
         iframe.style.height = "75%";
     } else {
         con2.style.display = "none";
+        tocl4.style.display = "none";
         iframe.style.height = "100%";
     }
 })
