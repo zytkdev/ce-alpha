@@ -1,186 +1,280 @@
-const left = document.querySelector(".left"),
-right = document.querySelector(".right"),
-editorhtml = document.querySelector(".editor-html"),
-editorcss = document.querySelector(".editor-css"),
-editorjs = document.querySelector(".editor-js"),
-tocl1 = document.querySelector(".tocl-1"),
-tocl2 = document.querySelector(".tocl-2"),
-tocl3 = document.querySelector(".tocl-3"),
-tocl4 = document.querySelector(".tocl-4"),
-pre = document.querySelector("#log"),
-run = document.querySelector(".btn-run"),
-ontb = document.querySelector(".btn-ont"),
-iframe = document.querySelector(".iframe"),
-con = document.querySelector(".test"),
-darkLightMode = document.querySelector(".btn-dark-light"),
-menu = document.querySelector(".editor-menu"),
-live = document.querySelector(".live"),
-livebtn = document.querySelector("#live"),
-conbtn = document.querySelector("#test"),
-con2 = document.querySelector("#log-container"),
-devlog = document.querySelector(".btn-dev"),
-body = document.querySelector(".body");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
-let ldm = 0;
-let w = 0;
-
-// Run Btn Event Listener
-run.addEventListener("click", runcode)
-
-function dhtml() {
-    var htmlBlob = new Blob([editorhtml.value], {type: "text/html"});
-
-    var url = window.URL.createObjectURL(htmlBlob);
-    var anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "index.html";
-
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-function dcss() {
-    var cssBlob = new Blob([editorcss.value], {type: "text/css"});
-
-    var url = window.URL.createObjectURL(cssBlob);
-    var anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "style.css";
-
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
+html {
+    font-size: 62.5%;
 }
 
-function djs() {
-    var jsBlob = new Blob([editorjs.value], {type: "text/js"});
-
-    var url = window.URL.createObjectURL(jsBlob);
-    var anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "script.js";
-
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
+body {
+    transition: all .3s;
 }
 
-// Set Dark Mode
-darkLightMode.addEventListener("click", () => {
-    
-    if (ldm == '0') {
-        ldm = 1;
-        darkLightMode.innerHTML = "Light Mode";
-        editorhtml.style.backgroundColor = "#363836";
-        editorhtml.style.color = "#eee";
-        editorcss.style.backgroundColor = "#363836";
-        editorcss.style.color = "#eee";
-        editorjs.style.backgroundColor = "#363836";
-        editorjs.style.color = "#eee";
-        tocl1.style.backgroundColor = "darkslategray";
-        devlog.style.backgroundColor = "darkslategray";
-        tocl1.style.color = "#eee";
-        tocl4.style.backgroundColor = "darkslategray";
-        con.style.backgroundColor = "darkslategray";
-        con.style.color = "#eee";
-        tocl4.style.color = "#eee";
-        pre.style.color = "#eee";
-        tocl2.style.backgroundColor = "darkslategray";
-        tocl2.style.color = "#eee";    
-        tocl3.style.backgroundColor = "darkslategray";
-        tocl3.style.color = "#eee";
-        menu.style.backgroundColor = "#363836";    
-        body.style.backgroundColor = "#363836";
-        darkLightMode.style.backgroundColor = "darkslategray";
-        live.style.backgroundColor = "darkslategray";
-        ontb.style.backgroundColor = "darkslategray";
-        run.style.backgroundColor = "darkslategray";
-        darkMode.style.color = "#eee";
-        devlog.style.color = "#eee";
-        ontb.style.color = "#eee";
-        lightMode.style.color = "#eee";
-        run.style.color = "#eee";
-        live.style.color = "#eee";
-    } else if (ldm == '1') {
-        ldm = 0;
-        darkLightMode.innerHTML = "Dark Mode";
-        editorhtml.style.backgroundColor = "";
-        editorhtml.style.color = "";
-        editorcss.style.backgroundColor = "";
-        editorcss.style.color = "";    
-        editorjs.style.backgroundColor = "";
-        editorjs.style.color = "";
-        pre.style.color = "";
-        tocl1.style.backgroundColor = "#31ad26";
-        tocl4.style.backgroundColor = "#31ad26"
-        con.style.backgroundColor = "#31ad26";
-        con.style.color = "#eee";
-        tocl4.style.color = "#eee";
-        devlog.style.backgroundColor = "#31ad26";
-        tocl1.style.color = "#eee";
-        tocl2.style.backgroundColor = "#31ad26";
-        tocl2.style.color = "#eee";
-        tocl3.style.backgroundColor = "#31ad26";
-        tocl3.style.color = "#eee";
-        body.style.backgroundColor = "";
-        menu.style.backgroundColor = "";
-        darkLightMode.style.backgroundColor = "#31ad26";
-        live.style.backgroundColor = "#31ad26";
-        ontb.style.backgroundColor = "#31ad26";
-        run.style.backgroundColor = "#31ad26";
-        darkMode.style.color = "#fff";
-        devlog.style.color = "#fff";
-        lightMode.style.color = "#fff"
-        ontb.style.color = "#fff";
-        run.style.color = "#fff";
-        live.style.color = "";
-    }
+.editor-menu {
+    width: 100%;
+    height: 6rem;
+    background-color: #eee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0 5px 10px;
+    transition: all .3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
-})
+.btn {
+    background-color: #31ad26;
+    border-radius: 8px;
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin-right: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
-// LIVE CODE
-livebtn.addEventListener("click", () => {
-    if (livebtn.checked) {
-        addEventListener("keyup", runcode);
-    } else {
-        removeEventListener("keyup", runcode);
-    }
-})
+.live {
+    background-color: #31ad26;
+    border-radius: 8px;
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin-right: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
+.test {
+    background-color: #31ad26;
+    border-radius: 8px;
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin-right: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
-conbtn.addEventListener("click", () => {
-    if (conbtn.checked) {
-        con2.style.display = "block";
-        tocl4.style.display = "block"
-        iframe.style.height = "75%";
-    } else {
-        con2.style.display = "none";
-        tocl4.style.display = "none";
-        iframe.style.height = "100%";
-    }
-})
+.live > * {
+    cursor: pointer;
+}
 
-ontb.addEventListener('click', () => {
-    let html = editorhtml.value;
-    let css = "<style>"+editorcss.value+"</style";
-    let js = editorjs.value;
-    var myWindow = window.open("", "View Code");
-    myWindow.document.body.innerHTML=html+css;
-    myWindow.window.eval(js);
-})
+.container {
+    position: absolute;
+    bottom: 0;
+    top: 7rem;
+    width: 100%;
+    display: flex;
+    transition: all .3s;
+}
 
-devlog.addEventListener('click', () => {
-    window.open("./devlog.txt", "Devlog");
-})
+.left, .right {
+    height: 100%;
+    border-radius: 10px;
+    width: 50%;
+    border: 1px solid #d5d5d5;
+}
 
-function runcode() {
-    let html = editorhtml.value;
-    let css = "<style>"+editorcss.value+"</style>";
-    let js = editorjs.value;
-    iframe.contentDocument.body.innerHTML=html+css;
-    iframe.contentWindow.eval(js);
-    if (conbtn.checked) {
-        window.eval(js);
-    }
-} 
+.right {
+    flex: 1;
+}
+.editor-html {
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Source Code Pro', monospace;
+    outline: none;
+    padding: 1.2rem 0 0 1rem;
+    border-color: #ccc;
+    transition: all .3s;
+}
+
+.editor-css {
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Source Code Pro', monospace;
+    outline: none;
+    padding: 1.2rem 0 0 1rem;
+    border-color: #ccc;
+    transition: all .3s;
+}
+
+.editor-js {
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Source Code Pro', monospace;
+    outline: none;
+    padding: 1rem 0 0 1rem;
+    border-color: #ccc;
+    transition: all .3s;
+}
+
+.tocl {
+    background-color: #31ad26;
+    color: #eee;
+    border-radius: 8px;
+    border-width: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 1px;
+    height: 3%;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.toclp {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+    white-space: pre;
+    right: 0;
+    padding: 4px;
+}
+
+#ver {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2.5rem;
+    text-align: right;
+    color: lightgray;
+    transition: all .3s;
+}
+
+/* The container */
+.check {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .check:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .check input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .check .checkmark:after {
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #log-container { overflow: auto; height: 21%; }
+
+  .log-warn { color: orange; font-size: 1rem; margin-left: 4px;}
+  .log-error { color: red; font-size: 1rem; margin-left: 4px;}
+  .log-info { color: skyblue; font-size: 1rem; margin-left: 4px;}
+  .log-log { font-size: 1rem; margin-left: 4px;}
+
+  .log-warn, .log-error { font-weight: bold;}
