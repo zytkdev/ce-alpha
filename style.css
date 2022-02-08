@@ -73,6 +73,29 @@ body {
     touch-action: manipulation;
 }
 
+.test {
+    background-color: #31ad26;
+    border-radius: 8px;
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin-right: 8px;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
 .live > * {
     cursor: pointer;
 }
@@ -96,15 +119,14 @@ body {
 .right {
     flex: 1;
 }
-
 .editor-html {
     width: 100%;
     height: 30%;
-    font-size: 1.2rem;
     border-radius: 10px;
+    font-size: 1.2rem;
     font-family: 'Source Code Pro', monospace;
     outline: none;
-    padding: 1rem 0 0 1rem;
+    padding: 1.2rem 0 0 1rem;
     border-color: #ccc;
     transition: all .3s;
 }
@@ -165,7 +187,7 @@ textarea {
 
 .iframe {
     width: 100%;
-    height: 100%;
+    height: 75%;
     border-radius: 10px;
     background-color: #fff;
     overflow-y: auto;
@@ -247,3 +269,12 @@ textarea {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+  #log-container { overflow: auto; height: 15%; }
+
+  .log-warn { color: orange }
+  .log-error { color: red }
+  .log-info { color: skyblue }
+  .log-log { font-size: 1rem;}
+
+  .log-warn, .log-error { font-weight: bold;}
