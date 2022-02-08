@@ -1,5 +1,8 @@
 ZYTK Code Editor Devlog
 
+Update v0.9.2 02/08/2022:
+   - Added Console (In Devlopment)
+
 Update v0.9.1 02/04/2022:
    - Updated Checkmark style
    - Fixed File Download
