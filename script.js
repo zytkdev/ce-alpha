@@ -3,6 +3,7 @@ right = document.querySelector(".right"),
 editorhtml = document.querySelector(".editor-html"),
 editorcss = document.querySelector(".editor-css"),
 editorjs = document.querySelector(".editor-js"),
+ver = document.querySelector("#ver"),
 tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
@@ -85,7 +86,11 @@ darkLightMode.addEventListener("click", () => {
         con.style.backgroundColor = "darkslategray";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
+        left.style.backgroundColor = "#363836";
+        right.style.backgroundColor = "#363836";
         pre.style.color = "#eee";
+        con2.style.backgroundColor = "#363836";
+        con2.style.color = "#eee";
         tocl2.style.backgroundColor = "darkslategray";
         tocl2.style.color = "#eee";    
         tocl3.style.backgroundColor = "darkslategray";
@@ -105,30 +110,34 @@ darkLightMode.addEventListener("click", () => {
     } else if (ldm == '1') {
         ldm = 0;
         darkLightMode.innerHTML = "Dark Mode";
-        editorhtml.style.backgroundColor = "";
-        editorhtml.style.color = "";
-        editorcss.style.backgroundColor = "";
-        editorcss.style.color = "";    
-        editorjs.style.backgroundColor = "";
-        editorjs.style.color = "";
-        pre.style.color = "";
-        tocl1.style.backgroundColor = "#31ad26";
-        tocl4.style.backgroundColor = "#31ad26"
-        con.style.backgroundColor = "#31ad26";
+        editorhtml.style.backgroundColor = "#F3CFC6";
+        editorhtml.style.color = "palevioletred";
+        editorcss.style.backgroundColor = "#F3CFC6";
+        editorcss.style.color = "palevioletred";    
+        editorjs.style.backgroundColor = "#F3CFC6";
+        left.style.backgroundColor = "#F3CFC6";
+        right.style.backgroundColor = "#F3CFC6";
+        editorjs.style.color = "palevioletred";
+        pre.style.color = "palevioletred";
+        tocl1.style.backgroundColor = "palevioletred";
+        tocl4.style.backgroundColor = "palevioletred"
+        con2.style.backgroundColor = "#F3CFC6";
+        con2.style.color = "#eee";
+        con.style.backgroundColor = "palevioletred";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
-        devlog.style.backgroundColor = "#31ad26";
+        devlog.style.backgroundColor = "palevioletred";
         tocl1.style.color = "#eee";
-        tocl2.style.backgroundColor = "#31ad26";
+        tocl2.style.backgroundColor = "palevioletred";
         tocl2.style.color = "#eee";
-        tocl3.style.backgroundColor = "#31ad26";
+        tocl3.style.backgroundColor = "palevioletred";
         tocl3.style.color = "#eee";
-        body.style.backgroundColor = "";
-        menu.style.backgroundColor = "";
-        darkLightMode.style.backgroundColor = "#31ad26";
-        live.style.backgroundColor = "#31ad26";
-        ontb.style.backgroundColor = "#31ad26";
-        run.style.backgroundColor = "#31ad26";
+        body.style.backgroundColor = "#F3CFC6";
+        menu.style.backgroundColor = "#FFB6C1";
+        darkLightMode.style.backgroundColor = "palevioletred";
+        live.style.backgroundColor = "palevioletred";
+        ontb.style.backgroundColor = "palevioletred";
+        run.style.backgroundColor = "palevioletred";
         darkMode.style.color = "#fff";
         devlog.style.color = "#fff";
         lightMode.style.color = "#fff"
@@ -184,3 +193,47 @@ function runcode() {
         window.eval(js);
     }
 } 
+
+function calculateVCountdown() {
+
+    var now = new Date();
+
+    var currentMonth = (now.getMonth() + 1);
+
+    var currentDay = now.getDate();
+
+    var nextVYear = now.getFullYear();
+
+    if (currentMonth == 02 && currentDay > 14) {
+        ver.innerHTML = "v0.9.4";
+    }
+
+    if (currentMonth == 02 && currentDay == 14) {
+        ver.innerHTML = "It's valentines day!"
+    }
+
+    var nextVDate = nextVYear + '-02-14T00:00:00.000Z';
+    var vDay = new Date(nextVDate);
+
+    var diffSeconds = Math.floor((vDay.getTime() - now.getTime()) / 1000);
+
+    var days = 0;
+    var hours = 0;
+    var minutes = 0;
+    var seconds = 0;
+
+    if(currentMonth != 02 || (currentMonth == 02 && currentDay != 14)){
+        days = Math.floor(diffSeconds / (3600*24));
+        diffSeconds  -= days * 3600 * 24;
+        hours   = Math.floor(diffSeconds / 3600);
+        diffSeconds  -= hours * 3600;
+        minutes = Math.floor(diffSeconds / 60);
+        diffSeconds  -= minutes * 60;
+        seconds = diffSeconds;
+        ver.innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds + " Till Valentines Day!";
+    }
+
+    setTimeout(calculateVCountdown, 1000);
+}
+
+calculateVCountdown();
