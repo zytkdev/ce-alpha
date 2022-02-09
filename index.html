@@ -11,24 +11,27 @@
 
     <body class="body">
         <div class="editor-menu">
-            <button class="btn btn-dark-light">Dark Mode</button>
-            <button class="btn btn-run">Run</button>
-            <button class="btn btn-ont">Open In A New Tab</button>
-            <button class="btn btn-dev">Devlog</button>
-            <div class="test">
-                <label class="check">Console (In Testing)
-                    <input type="checkbox" id="test">
-                    <span class="checkmark"></span>
-                  </label>
+            <button class="btn btn-close"><</button>
+            <div class="e">
+                <button class="btn btn-dark-light">Dark Mode</button>
+                <button class="btn btn-run">Run</button>
+                <button class="btn btn-ont">Open In A New Tab</button>
+                <button class="btn btn-dev">Devlog</button>
+                <div class="test">
+                    <label class="check">Console (In Testing)
+                        <input type="checkbox" id="test">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+                <div class="live">
+                    <label class="check">Live Mode
+                        <input type="checkbox" id="live">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+                <p id="ver"></p>
             </div>
-            <div class="live">
-                <label class="check">Live Mode
-                    <input type="checkbox" id="live">
-                    <span class="checkmark"></span>
-                  </label>
             </div>
-            <p id="ver">v0.9.3</p>
-        </div>
 
         <div class="container">
             <div class="left">
@@ -46,7 +49,7 @@
                 <textarea class="editor-js"></textarea>
             </div>
             <div class="right">
-                <iframe frameborder="0" class="iframe" id="iframe"></iframe>
+                <iframe class="iframe" id="iframe"></iframe>
                     <div style="display: none;" class="tocl tocl-4">
                         <p class="toclp">Console</p>
                     </div>
