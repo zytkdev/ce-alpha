@@ -8,10 +8,12 @@ tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
 tocl4 = document.querySelector(".tocl-4"),
+e = document.querySelector(".e"),
 pre = document.querySelector("#log"),
 run = document.querySelector(".btn-run"),
 ontb = document.querySelector(".btn-ont"),
 iframe = document.querySelector(".iframe"),
+close = document.querySelector(".btn-close"),
 con = document.querySelector(".test"),
 darkLightMode = document.querySelector(".btn-dark-light"),
 menu = document.querySelector(".editor-menu"),
@@ -24,9 +26,24 @@ body = document.querySelector(".body");
 
 let ldm = 0;
 let w = 0;
+let c = 0;
 
 // Run Btn Event Listener
 run.addEventListener("click", runcode)
+
+close.addEventListener('click', () => {
+    if (c == 0) {
+        c = 1;
+        e.style.display = "none";
+        close.innerHTML = ">";
+        menu.style.width = "4%";
+    } else if (c == 1) {
+        c = 0;
+        e.style.display = "";
+        close.innerHTML = "<"
+        menu.style.width = "100%";
+    }
+})
 
 function dhtml() {
     var htmlBlob = new Blob([editorhtml.value], {type: "text/html"});
@@ -79,6 +96,7 @@ darkLightMode.addEventListener("click", () => {
         editorcss.style.color = "#eee";
         editorjs.style.backgroundColor = "#363836";
         editorjs.style.color = "#eee";
+        iframe.style.backgroundColor = "white";
         tocl1.style.backgroundColor = "darkslategray";
         devlog.style.backgroundColor = "darkslategray";
         tocl1.style.color = "#eee";
@@ -86,6 +104,8 @@ darkLightMode.addEventListener("click", () => {
         con.style.backgroundColor = "darkslategray";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
+        e.style.backgroundColor = "#363836";
+        close.style.backgroundColor = "darkslategray"
         left.style.backgroundColor = "#363836";
         right.style.backgroundColor = "#363836";
         pre.style.color = "#eee";
@@ -117,8 +137,11 @@ darkLightMode.addEventListener("click", () => {
         editorjs.style.backgroundColor = "#F3CFC6";
         left.style.backgroundColor = "#F3CFC6";
         right.style.backgroundColor = "#F3CFC6";
+        e.style.backgroundColor = "#FFB6C1"
+        close.style.backgroundColor = "palevioletred";
         editorjs.style.color = "palevioletred";
         pre.style.color = "palevioletred";
+        iframe.style.backgroundColor = "pink";
         tocl1.style.backgroundColor = "palevioletred";
         tocl4.style.backgroundColor = "palevioletred"
         con2.style.backgroundColor = "#F3CFC6";
