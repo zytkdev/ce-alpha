@@ -1,6 +1,10 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v0.9.5 02/09/2022:
+   - Changed Iframe to a Valentines theme!
+   - Added Close Menu Button
+
 Update v0.9.4 02/09/2022:
    - Added Valentines Timer!
    - Changed Light Mode To A Valentines Theme!
