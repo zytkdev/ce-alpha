@@ -1,4 +1,10 @@
-ZYTK Code Editor Devlog
+ ZYTK Code Editor Devlog
+|-----------------------|
+
+Update v0.9.4 02/09/2022:
+   - Added Valentines Timer!
+   - Changed Light Mode To A Valentines Theme!
+   - Squashed a bug with the console
 
 Update v0.9.3 02/08/2022:
    - Fixed Console
