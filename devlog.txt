@@ -1,6 +1,9 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v0.9.7 02/14/2022:
+   - Updated the Saving Code Feature
+
 Update v0.9.6 02/14/2022:
    - Fixed Light Mode/Dark Mode Code
    - Fixed V-Day Countdown Code
