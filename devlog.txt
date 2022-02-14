@@ -3,6 +3,7 @@
 
 Update v0.9.6 02/14/2022:
    - Fixed Light Mode/Dark Mode Code
+   - Fixed V-Day Countdown Code
 
 Update v0.9.5 02/09/2022:
    - Changed Iframe to a Valentines theme!
