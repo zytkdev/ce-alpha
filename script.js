@@ -4,6 +4,7 @@ editorhtml = document.querySelector(".editor-html"),
 editorcss = document.querySelector(".editor-css"),
 editorjs = document.querySelector(".editor-js"),
 ver = document.querySelector("#ver"),
+save = document.querySelector(".btn-save"),
 tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
@@ -45,10 +46,11 @@ close.addEventListener('click', () => {
     }
 })
 
-function dhtml() {
-    var htmlBlob = new Blob([editorhtml.value], {type: "text/html"});
+save.addEventListener("click", () => {
+    let s = editorhtml.value + "<script>" + editorjs.value + "</script>" + "<style>" + editorcss.value + "</style>";
+    var saveBlob = new Blob([s], {type: "text/html"});
 
-    var url = window.URL.createObjectURL(htmlBlob);
+    var url = window.URL.createObjectURL(saveBlob);
     var anchor = document.createElement("a");
     anchor.href = url;
     anchor.download = "index.html";
@@ -56,34 +58,7 @@ function dhtml() {
     anchor.click();
     window.URL.revokeObjectURL(url);
     document.removeChild(anchor);
-}
-
-function dcss() {
-    var cssBlob = new Blob([editorcss.value], {type: "text/css"});
-
-    var url = window.URL.createObjectURL(cssBlob);
-    var anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "style.css";
-
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
-}
-
-function djs() {
-    var jsBlob = new Blob([editorjs.value], {type: "text/js"});
-
-    var url = window.URL.createObjectURL(jsBlob);
-    var anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "script.js";
-
-    anchor.click();
-    window.URL.revokeObjectURL(url);
-    document.removeChild(anchor);
-}
-
+})
 // Set Dark Mode
 darkLightMode.addEventListener("click", () => {
     
@@ -102,6 +77,8 @@ darkLightMode.addEventListener("click", () => {
         tocl1.style.color = "#eee";
         tocl4.style.backgroundColor = "darkslategray";
         con.style.backgroundColor = "darkslategray";
+        save.style.backgroundColor = "darkslategray";
+        save.style.color = "#eee";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
         e.style.backgroundColor = "#363836";
@@ -139,6 +116,8 @@ darkLightMode.addEventListener("click", () => {
         right.style.backgroundColor = "#F3CFC6";
         e.style.backgroundColor = "#FFB6C1";
         close.style.backgroundColor = "palevioletred";
+        save.style.backgroundColor = "palevioletred";
+        save.style.color = "#eee";
         editorjs.style.color = "palevioletred";
         pre.style.color = "palevioletred";
         iframe.style.backgroundColor = "pink";
