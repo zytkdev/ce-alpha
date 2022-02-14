@@ -181,7 +181,6 @@ body {
     color: #eee;
     border-radius: 8px;
     border-width: 0;
-    cursor: pointer;
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -196,10 +195,6 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-}
-
-.toclp {
-    cursor: pointer;
 }
 
 textarea {
