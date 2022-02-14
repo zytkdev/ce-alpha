@@ -207,7 +207,7 @@ function calculateVCountdown() {
     var nextVYear = now.getFullYear();
 
     if (currentMonth == 02 && currentDay > 14) {
-        ver.innerHTML = "v0.9.6";
+        ver.innerHTML = "v0.9.7";
     }
 
     if (currentMonth == 02 && currentDay == 14) {
