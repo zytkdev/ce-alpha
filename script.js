@@ -107,39 +107,39 @@ darkLightMode.addEventListener("click", () => {
     } else if (ldm == '1') {
         ldm = 0;
         darkLightMode.innerHTML = "Dark Mode";
-        editorhtml.style.backgroundColor = "#F3CFC6";
-        editorhtml.style.color = "palevioletred";
-        editorcss.style.backgroundColor = "#F3CFC6";
-        editorcss.style.color = "palevioletred";    
-        editorjs.style.backgroundColor = "#F3CFC6";
-        left.style.backgroundColor = "#F3CFC6";
-        right.style.backgroundColor = "#F3CFC6";
-        e.style.backgroundColor = "#FFB6C1";
-        close.style.backgroundColor = "palevioletred";
-        save.style.backgroundColor = "palevioletred";
+        editorhtml.style.backgroundColor = "";
+        editorhtml.style.color = "";
+        editorcss.style.backgroundColor = "";
+        editorcss.style.color = "";    
+        editorjs.style.backgroundColor = "";
+        left.style.backgroundColor = "";
+        right.style.backgroundColor = "";
+        e.style.backgroundColor = "#eee";
+        close.style.backgroundColor = "#31ad26";
+        save.style.backgroundColor = "#31ad26";
         save.style.color = "#eee";
-        editorjs.style.color = "palevioletred";
-        pre.style.color = "palevioletred";
-        iframe.style.backgroundColor = "pink";
-        tocl1.style.backgroundColor = "palevioletred";
-        tocl4.style.backgroundColor = "palevioletred";
-        con2.style.backgroundColor = "#F3CFC6";
+        editorjs.style.color = "";
+        pre.style.color = "";
+        iframe.style.backgroundColor = "";
+        tocl1.style.backgroundColor = "#31ad26";
+        tocl4.style.backgroundColor = "#31ad26";
+        con2.style.backgroundColor = "";
         con2.style.color = "#eee";
-        con.style.backgroundColor = "palevioletred";
+        con.style.backgroundColor = "";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
-        devlog.style.backgroundColor = "palevioletred";
+        devlog.style.backgroundColor = "#31ad26";
         tocl1.style.color = "#eee";
-        tocl2.style.backgroundColor = "palevioletred";
+        tocl2.style.backgroundColor = "#31ad26";
         tocl2.style.color = "#eee";
-        tocl3.style.backgroundColor = "palevioletred";
+        tocl3.style.backgroundColor = "#31ad26";
         tocl3.style.color = "#eee";
-        body.style.backgroundColor = "#F3CFC6";
-        menu.style.backgroundColor = "#FFB6C1";
-        darkLightMode.style.backgroundColor = "palevioletred";
-        live.style.backgroundColor = "palevioletred";
-        ontb.style.backgroundColor = "palevioletred";
-        run.style.backgroundColor = "palevioletred";
+        body.style.backgroundColor = "";
+        menu.style.backgroundColor = "#eee";
+        darkLightMode.style.backgroundColor = "#31ad26";
+        live.style.backgroundColor = "#31ad26";
+        ontb.style.backgroundColor = "#31ad26";
+        run.style.backgroundColor = "#31ad26";
         darkMode.style.color = "#fff";
         devlog.style.color = "#fff";
         lightMode.style.color = "#fff"
@@ -196,7 +196,7 @@ function runcode() {
     }
 } 
 
-function calculateVCountdown() {
+/* function calculateVCountdown() {
 
     var now = new Date();
 
@@ -238,4 +238,4 @@ function calculateVCountdown() {
     setTimeout(calculateVCountdown, 1000);
 }
 
-calculateVCountdown();
+calculateVCountdown(); */
