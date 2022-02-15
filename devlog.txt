@@ -1,6 +1,11 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v0.9.9 02/15/2022:
+   - Fixed Iframe's Border
+   - Made Code More Neat
+   - Added Notes In Code To Help People Understand It Better!
+
 Update v0.9.8 02/15/2022:
    - Reverted Valentines Theme Back To Normal
 
