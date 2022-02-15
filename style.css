@@ -11,14 +11,13 @@ html {
 }
 
 body {
-    background-color: #F3CFC6;
     transition: all .3s;
 }
 
 .editor-menu {
     width: 100%;
     height: 6rem;
-    background-color: #FFB6C1;
+    background-color: #eee;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -31,7 +30,7 @@ body {
 .e {
     width: 100%;
     height: 6rem;
-    background-color: #FFB6C1;
+    background-color: #eee;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -42,7 +41,7 @@ body {
 }
 
 .btn {
-    background-color: palevioletred;
+    background-color: #31ad26;
     border-radius: 8px;
     border-width: 0;
     color: #fff;
@@ -65,7 +64,7 @@ body {
 }
 
 .live {
-    background-color: palevioletred;
+    background-color: #31ad26;
     border-radius: 8px;
     border-width: 0;
     color: #fff;
@@ -88,7 +87,7 @@ body {
 }
 
 .test {
-    background-color: palevioletred;
+    background-color: #31ad26;
     border-radius: 8px;
     border-width: 0;
     color: #fff;
@@ -118,7 +117,6 @@ body {
     position: absolute;
     bottom: 0;
     top: 7rem;
-    background-color: #F3CFC6;
     width: 100%;
     display: flex;
     transition: all .3s;
@@ -137,8 +135,6 @@ body {
 .editor-html {
     width: 100%;
     height: 30%;
-    background-color: #F3CFC6;
-    color: palevioletred;
     border-radius: 10px;
     font-size: 1.2rem;
     font-family: 'Source Code Pro', monospace;
@@ -150,9 +146,7 @@ body {
 
 .editor-css {
     width: 100%;
-    background-color: #F3CFC6;
     height: 30%;
-    color: palevioletred;
     border-radius: 10px;
     font-size: 1.2rem;
     font-family: 'Source Code Pro', monospace;
@@ -166,8 +160,6 @@ body {
     width: 100%;
     height: 30%;
     border-radius: 10px;
-    background-color: #F3CFC6;
-    color: palevioletred;
     font-size: 1.2rem;
     font-family: 'Source Code Pro', monospace;
     outline: none;
@@ -177,7 +169,7 @@ body {
 }
 
 .tocl {
-    background-color: palevioletred;
+    background-color: #31ad26;
     color: #eee;
     border-radius: 8px;
     border-width: 0;
@@ -206,8 +198,6 @@ textarea {
     height: 100%;
     border-radius: 10px;
     background-color: #fff;
-    background-color: pink;
-    border-color: pink;
     overflow-y: auto;
     white-space: pre;
     right: 0;
@@ -218,7 +208,7 @@ textarea {
     font-family: 'Source Code Pro', monospace;
     font-size: 2.5rem;
     text-align: right;
-    color: hotpink;
+    color: lightgray;
     transition: all .3s;
 }
 
