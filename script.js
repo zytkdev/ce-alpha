@@ -25,13 +25,14 @@ con2 = document.querySelector("#log-container"),
 devlog = document.querySelector(".btn-dev"),
 body = document.querySelector(".body");
 
+// Variables used for close btn & ldm btn
 let ldm = 0;
-let w = 0;
 let c = 0;
 
-// Run Btn Event Listener
-run.addEventListener("click", runcode)
+// Run btn event listner
+run.addEventListener("click", runcode);
 
+// Closes the menu
 close.addEventListener('click', () => {
     if (c == 0) {
         c = 1;
@@ -44,8 +45,9 @@ close.addEventListener('click', () => {
         close.innerHTML = "<"
         menu.style.width = "100%";
     }
-})
+});
 
+// Downloads your code
 save.addEventListener("click", () => {
     let s = editorhtml.value + "<script>" + editorjs.value + "</script>" + "<style>" + editorcss.value + "</style>";
     var saveBlob = new Blob([s], {type: "text/html"});
@@ -58,8 +60,9 @@ save.addEventListener("click", () => {
     anchor.click();
     window.URL.revokeObjectURL(url);
     document.removeChild(anchor);
-})
-// Set Dark Mode
+});
+
+// Set Light Mode/Dark Mode
 darkLightMode.addEventListener("click", () => {
     
     if (ldm == '0') {
@@ -148,18 +151,18 @@ darkLightMode.addEventListener("click", () => {
         live.style.color = "";
     }
 
-})
+});
 
-// LIVE CODE
+// Live Code
 livebtn.addEventListener("click", () => {
     if (livebtn.checked) {
         addEventListener("keyup", runcode);
     } else {
         removeEventListener("keyup", runcode);
     }
-})
+});
 
-
+// Toggle the console
 conbtn.addEventListener("click", () => {
     if (conbtn.checked) {
         con2.style.display = "block";
@@ -170,8 +173,9 @@ conbtn.addEventListener("click", () => {
         tocl4.style.display = "none";
         iframe.style.height = "100%";
     }
-})
+});
 
+// Open your code in a new window
 ontb.addEventListener('click', () => {
     let html = editorhtml.value;
     let css = "<style>"+editorcss.value+"</style";
@@ -179,12 +183,14 @@ ontb.addEventListener('click', () => {
     var myWindow = window.open("", "View Code");
     myWindow.document.body.innerHTML=html+css;
     myWindow.window.eval(js);
-})
+});
 
+// Opens the devlog
 devlog.addEventListener('click', () => {
     window.open("./devlog.txt", "Devlog");
-})
+});
 
+// Runs the code
 function runcode() {
     let html = editorhtml.value;
     let css = "<style>"+editorcss.value+"</style>";
@@ -196,6 +202,7 @@ function runcode() {
     }
 } 
 
+// Valentines Countdown
 /* function calculateVCountdown() {
 
     var now = new Date();
