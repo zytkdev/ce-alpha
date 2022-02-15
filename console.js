@@ -1,7 +1,9 @@
+// Starts the console
 rewireLoggingToElement(
     () => document.getElementById("log"),
     () => document.getElementById("log-container"), true);
 
+// Console Code
 function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
     fixLoggingFunc('log');
     fixLoggingFunc('debug');
