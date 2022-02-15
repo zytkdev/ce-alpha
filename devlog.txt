@@ -1,6 +1,9 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v0.9.8 02/15/2022:
+   - Reverted Valentines Theme Back To Normal
+
 Update v0.9.7 02/14/2022:
    - Updated the Saving Code Feature
 
