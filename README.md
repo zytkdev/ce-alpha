@@ -1,6 +1,7 @@
 # ZYTK Code Editor Beta
 
-## Table of Contents:  
+## Table of Contents: 
+- [Table of Contents](#table-of-contents)  
 - [Intro](#intro)  
 - [How to Use](#how-to-use)  
 - [How to type your code](#1-how-to-type-your-code)
@@ -17,3 +18,12 @@ Let's first show you where to put your HTML. You Want to put your HTML Under the
 ![ce-beta](/docs/assets/HTML-Code-Section.png/)  
 Next Let's show you where to put your CSS code, which is right under the sign labeled "CSS". Here's another pciture to help you:  
 ![ce-beta](/docs/assets/CSS-Code-Section.png/)
+Finally Lets Show you where to type your jacascript, and that would be right under the sign labled "JS". Here's one more pciture to show you where that is  
+![ce-beta](/docs/assets/JS-Code-Section.png/)  
+### 2. How to run your code  
+Wondering how to run that code you just made? Let me teach you the two different ways to run your code.  
+#### a.  
+The first way to run your code is by clicking the button labled "Run". Here's where it is:  
+![ce-beta](/docs/assets/run-btn.png/)  
+The second way to run your code is by enabling LIVE Mode. The way to do this is to click the button labled "Live Mode", Here's where it is:\
+![ce-beta](/docs/assets/live-btn.png/)
