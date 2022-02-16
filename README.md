@@ -1,5 +1,10 @@
 # ZYTK Code Editor Beta
 
+## Table of Contents:  
+- [Intro](#intro)  
+- [How to Use](#how-to-use)  
+- [1. How to type your code](#1.-how-to-type-your-code)
+
 ### Intro
 Are you new to coding? Just trying to test out some new things you learned? Use our code editor! It's a fun code playground that you can use to play around with your
 skills! If you want to use that new flashy thing you saw on youtube, try it here!
