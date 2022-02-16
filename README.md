@@ -9,4 +9,6 @@ Need Help Getting Started? We Got You! Just Watch These Steps for Help!
 ### 1. How to type your code
 Do you not not where to put your code? Well we'll help you.
 Let's first show you where to put your HTML. You Want to put your HTML Under the labeled sign named "HTML" Here's a picture!  
-![ce-beta](/docs/assets/HTML-Code-Section.png/)
+![ce-beta](/docs/assets/HTML-Code-Section.png/)  
+Next Let's show you where to put your CSS code, which is right under the sign labeled "CSS". Here's another pciture to help you:  
+![ce-beta](/docs/assets/CSS-Code-Section.png/)
