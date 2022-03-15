@@ -9,12 +9,10 @@ tocl1 = document.querySelector(".tocl-1"),
 tocl2 = document.querySelector(".tocl-2"),
 tocl3 = document.querySelector(".tocl-3"),
 tocl4 = document.querySelector(".tocl-4"),
-e = document.querySelector(".e"),
 pre = document.querySelector("#log"),
 run = document.querySelector(".btn-run"),
 ontb = document.querySelector(".btn-ont"),
 iframe = document.querySelector(".iframe"),
-close = document.querySelector(".btn-close"),
 con = document.querySelector(".test"),
 darkLightMode = document.querySelector(".btn-dark-light"),
 menu = document.querySelector(".editor-menu"),
@@ -25,27 +23,11 @@ con2 = document.querySelector("#log-container"),
 devlog = document.querySelector(".btn-dev"),
 body = document.querySelector(".body");
 
-// Variables used for close btn & ldm btn
+// Variables used for ldm btn
 let ldm = 0;
-let c = 0;
 
 // Run btn event listner
 run.addEventListener("click", runcode);
-
-// Closes the menu
-close.addEventListener('click', () => {
-    if (c == 0) {
-        c = 1;
-        e.style.display = "none";
-        close.innerHTML = ">";
-        menu.style.width = "4%";
-    } else if (c == 1) {
-        c = 0;
-        e.style.display = "";
-        close.innerHTML = "<"
-        menu.style.width = "100%";
-    }
-});
 
 // Downloads your code
 save.addEventListener("click", () => {
@@ -84,8 +66,6 @@ darkLightMode.addEventListener("click", () => {
         save.style.color = "#eee";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
-        e.style.backgroundColor = "#363836";
-        close.style.backgroundColor = "darkslategray";
         left.style.backgroundColor = "#363836";
         right.style.backgroundColor = "#363836";
         pre.style.color = "#eee";
@@ -117,32 +97,30 @@ darkLightMode.addEventListener("click", () => {
         editorjs.style.backgroundColor = "";
         left.style.backgroundColor = "";
         right.style.backgroundColor = "";
-        e.style.backgroundColor = "#eee";
-        close.style.backgroundColor = "#31ad26";
-        save.style.backgroundColor = "#31ad26";
+        save.style.backgroundColor = "#37474F";
         save.style.color = "#eee";
         editorjs.style.color = "";
         pre.style.color = "";
         iframe.style.backgroundColor = "";
-        tocl1.style.backgroundColor = "#31ad26";
-        tocl4.style.backgroundColor = "#31ad26";
+        tocl1.style.backgroundColor = "#37474F";
+        tocl4.style.backgroundColor = "#37474F";
         con2.style.backgroundColor = "";
         con2.style.color = "#eee";
         con.style.backgroundColor = "";
         con.style.color = "#eee";
         tocl4.style.color = "#eee";
-        devlog.style.backgroundColor = "#31ad26";
+        devlog.style.backgroundColor = "#37474F";
         tocl1.style.color = "#eee";
-        tocl2.style.backgroundColor = "#31ad26";
+        tocl2.style.backgroundColor = "#37474F";
         tocl2.style.color = "#eee";
-        tocl3.style.backgroundColor = "#31ad26";
+        tocl3.style.backgroundColor = "#37474F";
         tocl3.style.color = "#eee";
         body.style.backgroundColor = "";
         menu.style.backgroundColor = "#eee";
-        darkLightMode.style.backgroundColor = "#31ad26";
-        live.style.backgroundColor = "#31ad26";
-        ontb.style.backgroundColor = "#31ad26";
-        run.style.backgroundColor = "#31ad26";
+        darkLightMode.style.backgroundColor = "#37474F";
+        live.style.backgroundColor = "#37474F";
+        ontb.style.backgroundColor = "#37474F";
+        run.style.backgroundColor = "#37474F";
         darkMode.style.color = "#fff";
         devlog.style.color = "#fff";
         lightMode.style.color = "#fff"
@@ -200,7 +178,44 @@ function runcode() {
     if (conbtn.checked) {
         window.eval(js);
     }
-} 
+    setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js));
+}
+
+function setCookie(cname, cvalue, exdays) {
+	const d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	let expires = "expires=" + d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+	let name = cname + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(';');
+	for(let i = 0; i < ca.length; i++) {
+	  let c = ca[i];
+	  while (c.charAt(0) == ' ') {
+		c = c.substring(1);
+	  }
+	  if (c.indexOf(name) == 0) {
+		return c.substring(name.length, c.length);
+	  }
+	}
+	return "";
+  }
+
+  function checkCookie() {
+      let data = getCookie("data");
+      if (data != "") {
+          let splitData = data.split("/.//../");
+          editorhtml.value = decodeURIComponent(splitData[0]);
+          editorcss.value = decodeURIComponent(splitData[1]);
+          editorjs.value = decodeURIComponent(splitData[2]);
+          alert("loaded recent data!");
+      } else {
+          return
+	}
+  }
 
 // Valentines Countdown
 /* function calculateVCountdown() {
