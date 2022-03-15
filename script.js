@@ -178,7 +178,7 @@ function runcode() {
     if (conbtn.checked) {
         window.eval(js);
     }
-    setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js));
+    setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js), 60);
 }
 
 function setCookie(cname, cvalue, exdays) {
