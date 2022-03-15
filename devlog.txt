@@ -1,6 +1,10 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v1.0.0 03/15/2022:
+   - Changed Light Mode colors
+   - Added Save Code Feature
+
 Update v0.9.9 02/15/2022:
    - Fixed Iframe's Border
    - Made Code More Neat
