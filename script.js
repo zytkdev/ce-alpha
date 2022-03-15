@@ -208,9 +208,9 @@ function getCookie(cname) {
       let data = getCookie("data");
       if (data != "") {
           let splitData = data.split("/.//../");
-          editorhtml.value = decodeURIComponent(splitData[0]);
-          editorcss.value = decodeURIComponent(splitData[1]);
-          editorjs.value = decodeURIComponent(splitData[2]);
+          editorhtml.value = splitData[0];
+          editorcss.value = splitData[1];
+          editorjs.value = splitData[2];
           alert("loaded recent data!");
       } else {
           return
