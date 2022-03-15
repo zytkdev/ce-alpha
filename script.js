@@ -178,7 +178,7 @@ function runcode() {
     if (conbtn.checked) {
         window.eval(js);
     }
-    setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js), 60);
+    setCookie("data", encodeURIComponent(html) + "." + encodeURIComponent(editorcss.value) + "." + encodeURIComponent(js), 60);
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -207,7 +207,7 @@ function getCookie(cname) {
   function checkCookie() {
       let data = getCookie("data");
       if (data != "") {
-          let splitData = data.split("/.//../");
+          let splitData = data.split(".");
           editorhtml.value = splitData[0];
           editorcss.value = splitData[1];
           editorjs.value = splitData[2];
