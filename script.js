@@ -178,7 +178,7 @@ function runcode() {
     if (conbtn.checked) {
         window.eval(js);
     }
-    setCookie("data", html + "//./..////../" + editorcss.value + "//./..////../" + js, 60);
+    setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js), 60);
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -190,8 +190,8 @@ function setCookie(cname, cvalue, exdays) {
 
 function getCookie(cname) {
 	let name = cname + "=";
-	let decodedCookie = decodeURIComponent(document.cookie);
-	let ca = decodedCookie.split(';');
+	let cokie = document.cookie;
+	let ca = cokie.split(';');
 	for(let i = 0; i < ca.length; i++) {
 	  let c = ca[i];
 	  while (c.charAt(0) == ' ') {
@@ -207,10 +207,10 @@ function getCookie(cname) {
   function checkCookie() {
       let data = getCookie("data");
       if (data != "") {
-          let splitData = data.split("//./..////../");
-          editorhtml.value = splitData[0];
-          editorcss.value = splitData[1];
-          editorjs.value = splitData[2];
+          let splitData = data.split("/.//../");
+          editorhtml.value = decodeURIComponent(splitData[0]);
+          editorcss.value = decodeURIComponent(splitData[1]);
+          editorjs.value = decodeURIComponent(splitData[2]);
           alert("loaded recent data!");
       } else {
           return
