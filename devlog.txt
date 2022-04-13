@@ -1,6 +1,9 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v1.0.2 04/13/2022:
+   - Updated Console
+
 Update v1.0.1 04/13/2022:
    - Updated Console
 
