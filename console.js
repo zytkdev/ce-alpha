@@ -1,3 +1,5 @@
+var frame = document.querySelector(".iframe");
+
 // Starts the console
 rewireLoggingToElement(
     () => document.getElementById("log"),
@@ -23,8 +25,8 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
     fixLoggingFunc('info');
 
     function fixLoggingFunc(name) {
-        console['old' + name] = console[name];
-        console[name] = function(...arguments) {
+        frame.contentWindow.console['old' + name] = frame.contentWindow.console[name];
+        frame.contentWindow.console[name] = function(...arguments) {
             const output = produceOutput(name, arguments);
             const eleLog = eleLocator();
 
@@ -39,7 +41,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
                 eleLog.innerHTML += Date.now() + ": " + output + "<br>";
             }
 
-            console['old' + name].apply(undefined, arguments);
+            frame.contentWindow.console['old' + name].apply(undefined, arguments);
         };
     }
 
