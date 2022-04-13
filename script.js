@@ -175,9 +175,6 @@ function runcode() {
     let js = editorjs.value;
     iframe.contentDocument.body.innerHTML=html+css;
     iframe.contentWindow.eval(js);
-    if (conbtn.checked) {
-        window.eval(js);
-    }
     setCookie("data", encodeURIComponent(html) + "/.//../" + encodeURIComponent(editorcss.value) + "/.//../" + encodeURIComponent(js), 60);
 }
 
