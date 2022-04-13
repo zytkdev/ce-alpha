@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
+.ui-autocomplete {
+    overflow-y: auto;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -132,7 +136,7 @@ body {
 .right {
     flex: 1;
 }
-.editor-html {
+.editor-html, #tags {
     width: 100%;
     height: 30%;
     border-radius: 10px;
