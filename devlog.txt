@@ -1,6 +1,12 @@
  ZYTK Code Editor Devlog
 |-----------------------|
 
+Update v1.0.5 04/25/2022:
+   - Fixed Loading Recent Code Feature
+
+Update v1.0.4 04/22/2022:
+   - Removed Autocomplete (Fixing, Will Be Back Soon)
+
 Update v1.0.3 04/13/2022:
    - Added HTML Autocomplete(CSS Coming Soon!)
 
