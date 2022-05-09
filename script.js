@@ -37,7 +37,7 @@ save.addEventListener("click", () => {
     var url = window.URL.createObjectURL(saveBlob);
     var anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = "index.html";
+    anchor.download = "ZCE-" + Date.now() + ".html";
 
     anchor.click();
     window.URL.revokeObjectURL(url);
